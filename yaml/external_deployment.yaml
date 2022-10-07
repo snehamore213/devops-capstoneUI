@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-ui-svc
+  name: devops-capstoneUI
 spec:
   selector:
     matchLabels:
-      app: ui-svc
+      app: capstoneUI
   replicas: 1
   template:
     metadata:
       labels:
-        app: ui-svc
+        app: capstoneUI
     spec:
       containers:
-      - name: ui-svc-container
-        image: cinnyabraham06/externalapp:8
+      - name: capstoneUI-container
+        image: snehamore213/externalapp:8
         env:
           - name: SERVER
             value: 'http://demo-data-svc:8888'
