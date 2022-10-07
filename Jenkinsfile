@@ -53,7 +53,7 @@ pipeline {
             steps {
                 echo 'Get cluster credentials'
                 sh 'gcloud container clusters get-credentials cinny-app-cluster --zone us-central1-c'
-                sh "kubectl set image deployment/devops-capstoneUI-container=${env.imageName}:${env.BUILD_ID}"
+                sh "kubectl set image deployment/devops-capstoneUI-container $imageName=${env.imageName}:${env.BUILD_ID}"
               }
             }       
         stage('Remove local docker images') {
