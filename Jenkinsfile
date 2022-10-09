@@ -52,7 +52,7 @@ pipeline {
                     }
             steps {
                 echo 'Get cluster credentials'
-                sh 'gcloud container clusters get-credentials cinny-app-cluster --zone us-central1-c'
+                sh 'gcloud container clusters get-credentials sneha-app-cluster --zone us-central1-c'
                 sh "kubectl set image deployment/devops-capstoneUI capstoneUI-container=${env.imageName}:${env.BUILD_ID}"
               }
             }       
