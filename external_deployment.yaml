@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'devops-capstone-ui'
+spec:
+  selector:
+    matchLabels:
+      app: capstoneUI
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: capstoneUI
+    spec:
+      containers:
+      - name: 'capstoneUI-container'
+        image: snehamore213/externalapp:8
+        env:
+          - name: SERVER
+            value: 'http://demo-data-svc:8888'
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
