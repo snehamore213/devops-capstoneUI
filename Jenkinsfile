@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         registryCredential = 'dockerhub'
-        imageName = 'snehamore213/externalapp'
+        imageName = 'sneham-image/externalapp'
         dockerImage = ''
         }
     stages {
@@ -52,7 +52,7 @@ pipeline {
                     }
             steps {
                 echo 'Get cluster credentials'
-                sh 'gcloud container clusters get-credentials sneha-app-cluster --zone us-central1-c'
+                sh 'gcloud container clusters get-credentials devops-app-cluster --zone us-central1-c'
                 sh "kubectl set image deployment/external-ui external-uic=${env.imageName}:${env.BUILD_ID}"
               }
             }       
