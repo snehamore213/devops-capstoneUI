@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         registryCredential = 'dockerhub'
-        imageName = 'sneha-image/externalapp'
+        imageName = 'snehamore213/externalui'
         dockerImage = ''
         }
     stages {
