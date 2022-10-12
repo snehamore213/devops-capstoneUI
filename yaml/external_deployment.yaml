@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: 'external-uic'
-        image: sneha-image/externalapp:8
+        image: snehamore213/externalui:8
         env:
           - name: SERVER
             value: 'http://demo-data-svc:8888'
