@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: 'external-uic'
-        image: snehamore213/externalui
+        image: snehamore213/externalui:17
         env:
           - name: SERVER
-            value: "http://demo-data-svc:8888"
+            value: 'http://demo-data-svc:8888'
         resources:
           requests:
             memory: "32Mi"
@@ -26,4 +26,4 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: "8080"
+        - containerPort: '8080'
