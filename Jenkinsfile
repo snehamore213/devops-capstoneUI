@@ -52,7 +52,7 @@ pipeline {
                     }
             steps {
                 echo 'Get cluster credentials'
-                sh 'gcloud container clusters get-credentials devops-practice-cluster --zone us-central1-c'
+                sh 'gcloud container clusters get-credentials devops-capstone-cluster --zone us-central1-c'
                 sh "kubectl set image deployment/external-ui external-uic=${env.imageName}:${env.BUILD_ID}"
               }
             }       
