@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: 'external-uic'
-        image: snehamore213/externalui1:17
+        image: snehamore213/externalpractice:17
         env:
           - name: SERVER
             value: 'http://demo-data-svc:8888'
