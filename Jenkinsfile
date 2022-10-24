@@ -53,7 +53,7 @@ pipeline {
             steps {
                 echo 'Get cluster credentials'
                 sh 'gcloud container clusters get-credentials devops-practice1-cluster --zone us-central1-c'
-                sh "kubectl set image deployment/externalpractice external-uic=${env.imageName}:${env.BUILD_ID}"
+                sh "kubectl set image deployment/external-ui external-uic=${env.imageName}:${env.BUILD_ID}"
               }
             }       
         stage('Remove local docker images') {
