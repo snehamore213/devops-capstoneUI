@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         registryCredential = 'dockerhub'
-        imageName = 'snehamore213/externalui1'
+        imageName = 'snehamore213/externalpractice'
         dockerImage = ''
         }
     stages {
@@ -52,8 +52,8 @@ pipeline {
                     }
             steps {
                 echo 'Get cluster credentials'
-                sh 'gcloud container clusters get-credentials devops-app-cluster --zone us-central1-c'
-                sh "kubectl set image deployment/external-ui external-uic=${env.imageName}:${env.BUILD_ID}"
+                sh 'gcloud container clusters get-credentials devops-practice1-cluster --zone us-central1-c'
+                sh "kubectl set image deployment/externalpractice external-uic=${env.imageName}:${env.BUILD_ID}"
               }
             }       
         stage('Remove local docker images') {
